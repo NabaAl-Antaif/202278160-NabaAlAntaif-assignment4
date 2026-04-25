@@ -18,6 +18,7 @@ The website show an overview of me (about section), projects section with descri
 - **Filtering Projects:** Filtering choice (Java projects, Python projects, Prototypes, All projects).
 - **Dark/Light Mode Toggle:** A theme toggle button allows users to switch between light and dark mode and the website remembers the user's preference using localStorage.
 - **Dynamic GitHub Repository Loading:** The GitHub section fetches and displays the latest repositories from GitHub profile using the GitHub API.
+- **Auto-Typing messages in the header:** Message appear under logo and name dynamically and keep cycle.
 
 
 ---

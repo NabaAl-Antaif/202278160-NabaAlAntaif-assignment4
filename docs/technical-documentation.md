@@ -80,6 +80,10 @@ A theme toggle button allows users to switch between light and dark mode and the
 
 The GitHub section fetches and displays the latest repositories from GitHub profile using the GitHub API.
 
+### Auto-Typing messages in the header
+
+Message appear under logo and name dynamically and keep cycle. 
+
 
 ---
 
