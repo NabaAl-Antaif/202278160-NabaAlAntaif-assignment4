@@ -209,3 +209,23 @@ const typingPhrases = [
 }
 
 document.addEventListener("DOMContentLoaded", type);
+
+// Scroll to top button functionality
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+// Show button when scrolling down
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        scrollTopBtn.style.display = "flex";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
+});
+
+// Scroll smoothly to top
+scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});

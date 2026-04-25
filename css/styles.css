@@ -432,3 +432,28 @@ textarea {
     border-radius: 0 0 8px 8px;
     transition: background-color 0.3s ease;
 }
+
+/* Scroll to top button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--primary-color, #333);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    display: none; /* hidden by default */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+    transform: translateY(-4px);
+    background-color: var(--primary-color-hover, #555);
+}
