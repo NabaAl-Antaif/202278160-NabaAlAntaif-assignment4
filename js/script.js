@@ -159,3 +159,53 @@ async function loadRepos() {
 }
 
 loadRepos();
+
+// Typing animation for header text
+const typingElement = document.getElementById("typing-text");
+
+const typingPhrases = [
+    "Building solutions that make an impact",
+    "Software Engineering Student at KFUPM",
+    "Java & Python Developer",
+    "Passionate about real-world problem solving"
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingSpeed = 100;      // typing speed (ms per char)
+    const deletingSpeed = 50;     // deleting speed
+    const pauseBetweenPhrases = 1500; // pause before deleting
+
+    function type() {
+    const currentPhrase = typingPhrases[phraseIndex];
+
+    if (!isDeleting) {
+        // typing
+        typingElement.textContent = currentPhrase.slice(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentPhrase.length) {
+        // finished typing current phrase
+        setTimeout(() => {
+            isDeleting = true;
+            type();
+        }, pauseBetweenPhrases);
+        return;
+        }
+    } else {
+        // deleting
+        typingElement.textContent = currentPhrase.slice(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % typingPhrases.length;
+        }
+    }
+
+    const delay = isDeleting ? deletingSpeed : typingSpeed;
+    setTimeout(type, delay);
+}
+
+document.addEventListener("DOMContentLoaded", type);
